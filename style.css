@@ -1,0 +1,33 @@
+/* Fixes the view window to one image size */
+.slider-box {
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 20px auto;
+}
+
+/* Holds all images side-by-side (3 images = 300% width) */
+.slider-track {
+  display: flex;
+  width: 300%; 
+  animation: slideAnimation 9s infinite;
+}
+
+/* Forces each slide to match the slider-box window exactly */
+.slide {
+  width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+/* Timeline moves the margin leftwards to cycle images */
+@keyframes slideAnimation {
+  0%, 25%   { margin-left: 0%; }
+  33%, 58%  { margin-left: -100%; }
+  66%, 91%  { margin-left: -200%; }
+  100%      { margin-left: 0%; }
+}
